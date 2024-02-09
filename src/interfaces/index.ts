@@ -1,21 +1,11 @@
-// export interface IMovie {
-//   adult: boolean;
-//   backdrop_path: string;
-//   genre_ids: number[];
-//   id: number;
-//   original_language: string;
-//   original_title: string;
-//   overview: string;
-//   popularity: number;
-//   poster_path: string;
-//   release_date: string;
-//   title: string;
-//   video: boolean;
-//   vote_average: number;
-//   vote_count: number;
-// }
-
+import { Dispatch } from 'react';
 import { REDUCER_ACTION_TYPE } from '../Context/reducer';
+
+export interface IHomeState {
+  search: string;
+  searchMovies: IMovie[];
+  isLoading: boolean;
+}
 
 export interface IMovie {
   Title: string;
@@ -33,4 +23,11 @@ export interface IState {
 export interface IAction {
   type: REDUCER_ACTION_TYPE;
   payload: IMovie;
+}
+
+export interface IMovieContext {
+  watchList: IMovie[];
+  watched: IMovie[];
+  dispatch: Dispatch<IAction>;
+  state: IState;
 }
